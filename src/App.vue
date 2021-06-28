@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar />
-    <Menu />  
+
     <router-view path='$router.key'></router-view>
    
    </div> 
