@@ -13,27 +13,25 @@
             <li><i class="fas fa-graduation-cap"></i><a href="#contato">Diplomas</a></li>
         </ul>
     </nav>
+    
 </div>  <!-- fim menu-vertical -->
-
-        <div class="col-md-5 template"> <!-- inicio template -->
+        <div class="col-md-10">
+        <div class="col-md-6 template"> <!-- inicio template -->
         Templates de diplomas cadastrados
-        
-        
-        <div class="col-md-6"><!--filtros e ordenar -->
+        <div class="col-md-12"><!--filtros e ordenar -->
             <div id="contentTop"> 
             <div id="filtros"><i class="fas fa-filter"></i>Filtros</div>
             <div id="traco"></div>
             <div id="ordenar"> Ordenar por</div>
+            <br>
             </div>
-             </div> <!--fim filtros e ordenar -->
-            
-          
-            
-            </div> <!-- fim inicio template -->
+               </div>
              
-            <div class="col-md-5 d"> <!-- inicio cadastrar -->
-               <div id="cadastrar"> Cadastrar </div>
-                <div class="col-md-4 DataNameAtt"> <!-- inicio data name att -->
+        </div> <!-- fim filtros e ordenar -->
+
+            <div class="col-md-5 cadastrar"> <!-- inicio cadastrar -->
+               Cadastrar 
+                <div class="col-md-10 DataNameAtt"> <!-- inicio data name att -->
                 <div id="data">
                     Data
                 </div>
@@ -42,12 +40,18 @@
                 </div>
                 <div id="att">
                     Atualização
-                </div>
+                    </div>
+                
             </div> <!-- fim data name att -->
                 </div><!-- fim cadastrar -->
+
+                 <div class="col-md-10 diploma">
+           Título do diploma a ser usado como template
+            </div>
+         </div>
         
-        </div> <!-- fim row -->
-       
+     
+            </div> <!-- fim row -->
         </div>
 </template>
 
@@ -85,8 +89,9 @@ a{
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
     
+    
 }
-#cadastrar{
+.cadastrar{
     background-color: black;
     color: white;
     width: 120px;
@@ -94,10 +99,10 @@ a{
     text-align: center;
     justify-content: center;
     padding-top: 10px;
-    margin-left: 200px;
     border-radius: 15px;
-    margin-top: 40px;
-    
+    margin-top: -150px;
+    margin-left: 750px;
+
 }
 
 #filtros{
@@ -162,4 +167,11 @@ a{
     background-color: #B28DD6;
 
 }
+.diploma{
+    font-size: 16px;
+    border: 1px solid black;
+    margin-top:200px;
+    width: 100%;
+}
+
 </style>
