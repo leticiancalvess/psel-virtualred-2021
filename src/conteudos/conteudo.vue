@@ -45,9 +45,25 @@
             </div> <!-- fim data name att -->
                 </div><!-- fim cadastrar -->
 
-                 <div class="col-md-10 diploma">
-           Título do diploma a ser usado como template
+                 <div class="col-md-10 diploma"> <!-- inicio diploma -->
+                <div id="titulo">
+                Título do diploma a ser usado como template
+                </div> 
+                <div id="escola">
+                Escola que usa esse diploma
+                </div> 
+                <div id="curso">
+                Curso que usa esse diploma
+                </div> 
+                <div id="numero">
+                Nº de usuários associados
+                </div> 
+                <div id="balls">
+                <div id="ball1"></div>
+            <div id="ball2"></div>
             </div>
+            </div>
+            
          </div>
         
      
@@ -169,9 +185,46 @@ a{
 }
 .diploma{
     font-size: 16px;
-    border: 1px solid black;
-    margin-top:200px;
-    width: 100%;
+    margin-top:150px;
+    width: 98%;
+    height: 80px;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding-top: 25px;
+    background-color: #F9F9F9;
+    border-radius: 10px;
+    box-shadow:  0 5px 6px -6px black;
+    
+    
 }
-
+#titulo, #escola, #curso, #numero{
+    float: left;
+    margin-right: 25px;
+    height: 20px;
+}
+#titulo{
+    font-size: 16px;
+    font-family: 'Robot', sans-serif;
+    font-weight: bold;
+}
+#escola, #curso, #numero{
+    font-size: 14px;
+    font-family: 'Robot', sans-serif;
+    color: #B28DD6;
+}
+#ball1, #ball2{
+    float:left;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: -10px;
+}
+#ball1{
+    background-color: #FFC700;
+}
+#ball2{
+    background-color: #DB2323;
+}
 </style>
