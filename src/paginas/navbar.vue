@@ -3,28 +3,24 @@
         <!-- CSS only -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand logo" href="#"></a>
-  
-
- 
-    <form class="form-inline searchFuntionality">
-      <input class="form-control" type="search"  placeholder="Buscar Funcionalidade" aria-label="Search">
-     
-    </form>
-    <div class="superAdmin">
+        <!-- fim links -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- inicio navbar -->
+            <a class="navbar-brand logo" href="#"></a> 
+            <form class="form-inline searchFuntionality"> <!-- inicio buscar -->
+            <input class="form-control" type="search"  placeholder="Buscar Funcionalidade" aria-label="Search"> 
+            </form><!-- fim buscar -->
+    <div class="superAdmin"> <!-- inicio avatar e super admin -->
     <div class="avatar"></div>
     <div id="text">
        <div class="topText">Super Admin</div><br>
         <div class="bottomText">Super Admin</div>
         </div>
       
-    </div>
+    </div><!-- fim avatar e super admin -->
    
   
-</nav>
+</nav><!-- fim navbar -->
 </div>
-
 
 </template>
 

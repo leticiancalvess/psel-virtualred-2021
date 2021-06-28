@@ -15,7 +15,7 @@
     </nav>
     
 </div>  <!-- fim menu-vertical -->
-        <div class="col-md-10">
+        <div class="col-md-10"> <!-- inicio container -->
         <div class="col-md-6 template"> <!-- inicio template -->
         Templates de diplomas cadastrados
         <div class="col-md-12"><!--filtros e ordenar -->
@@ -58,13 +58,11 @@
                 <div id="numero">
                 Nº de usuários associados
                 </div> 
-                <div id="balls">
                 <div id="ball1"></div>
-            <div id="ball2"></div>
-            </div>
-            </div>
+                <div id="ball2"></div>
+            </div> <!-- fim diploma -->
             
-         </div>
+         </div> <!-- fim container -->
         
      
             </div> <!-- fim row -->
@@ -122,7 +120,6 @@ a{
 }
 
 #filtros{
-
     float: left;
     margin-right: 20px;
     color: #989898;
@@ -185,7 +182,7 @@ a{
 }
 .diploma{
     font-size: 16px;
-    margin-top:150px;
+    margin-top:100px;
     width: 98%;
     height: 80px;
     display: inline-block;
