@@ -46,6 +46,7 @@
       </div> <!-- fim data name att--> 
     </div> <!-- fim container --> 
  </div> 
+ <titulo-diploma></titulo-diploma>
  </div>
 </div>
 </div><!-- fim div -->
@@ -55,11 +56,12 @@
 <script>
 import Vue from 'vue';
 import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
+import TituloDiploma from './TitutloDiploma.vue'
 
 Vue.use(SidebarPlugin);
 export default {
     components: {
-        
+       'titulo-diploma': TituloDiploma,
     },
     data() {
         return{
@@ -91,11 +93,12 @@ export default {
 
 .sub-title {
     padding: 10px;
+    
 
 }
 #default-sidebar {
     background-color: rgb(189, 190, 192);
-    color: #ffffff;
+    color: #989898 !important;
     font-size: 14px;
     height: 919px ;
     padding-top: 20px;
@@ -106,8 +109,6 @@ export default {
     position: static;  
     width: 200px !important; 
 }
-
-
 
 nav ul  {
     list-style-type: none;
@@ -141,11 +142,11 @@ nav ul li a   {
 #cadastrar{
     background-color: black;
     color: white;
-    width: 150px;
+    width: 100px;
     height: 50px;
     border-radius: 15px;
     padding-top: 10px;
-    margin-left: 180px;
+    margin-left: 200px;
     margin-top: 10px;
     text-align: center;
    }
