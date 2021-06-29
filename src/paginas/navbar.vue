@@ -6,7 +6,8 @@
         <!-- fim links -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light"> <!-- inicio navbar -->
             <a class="navbar-brand logo" href="#"></a> 
-            <form class="form-inline searchFuntionality"> <!-- inicio buscar -->
+            <form class="form-inline searchFuntionality search"> <!-- inicio buscar -->
+                <i class="fas fa-search"></i>
             <input class="form-control" type="search"  placeholder="Buscar Funcionalidade" aria-label="Search"> 
             </form><!-- fim buscar -->
     <div class="superAdmin"> <!-- inicio avatar e super admin -->
@@ -15,13 +16,10 @@
        <div class="topText">Super Admin</div><br>
         <div class="bottomText">Super Admin</div>
         </div>
-      
     </div><!-- fim avatar e super admin -->
    
-  
 </nav><!-- fim navbar -->
 </div>
-
 </template>
 
 <script>
@@ -67,9 +65,23 @@ nav{
     font-family: 'Roboto', sans-serif
 }
 .bottomText{
-      margin-top: -20px;
+    margin-top: -20px;
     font-family: 'Rubik', sans-serif;
     font-size: 10px;
     color: white;
+}
+.search{
+    position: relative;
+}
+
+.search i {
+    position: absolute;
+    padding: 10px;
+    color: #989898;
+   
+}
+.search input.form-control {
+    padding-left: 30px;
+    color: #989898;
 }
 </style>
