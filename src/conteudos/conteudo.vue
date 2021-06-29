@@ -1,125 +1,158 @@
 <template>
-    <div>
-         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-              
-     <div class="row"> <!-- inicio row -->
-        <div class="col-md-2"> <!-- inicio menu-vertical -->
-    <nav class="menuVertical" >
+   <div id="app"> <!-- inicio div -->
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<div class="wrapper"> <!--inicio wrapper -->
+    <ejs-sidebar id="default-sidebar">
+      <nav> <!--inicio nav -->
         <ul>
-            <li><i class="fas fa-home"></i><a href="#">Início</a></li>
-            <li><i class="fas fa-users"></i><a href="#">Escolas</a></li>
-            <li><i class="far fa-user"></i><a href="#">Usuários</a></li>
-            <li><i class="fas fa-graduation-cap"></i><a href="#contato">Diplomas</a></li>
+            <li v-for="(item, index) in items" :key="index"><a href="#"><i :class=" 'fas ' + item.link"></i>{{ item.label }}</a></li>
+            
         </ul>
-    </nav>
-    
-</div>  <!-- fim menu-vertical -->
-        <div class="col-md-10"> <!-- inicio container -->
-        <div class="col-md-6 template"> <!-- inicio template -->
-        Templates de diplomas cadastrados
-        <div class="col-md-12"><!--filtros e ordenar -->
+    </nav> <!-- fim nav -->
+    </ejs-sidebar>
+    <div>
+    <div class="sub-title container-fluid"> <!-- inicio container -->
+    <div class="row"> <!-- inicio row -->
+        <div class="col-md-8 template"> <!--inicio template -->
+                {{ msg }}
+        </div><!--fim template -->
+    <div class="col-md-4 "><!--inicio cadastro -->
+        <div id="cadastrar"> Cadastrar</div>
+    </div><!--fim cadastro -->
+    </div><!--fim row -->
+    </div> <!-- fim container -->
+   
+<div class="container-fluid"><!-- inicio container -->
+  <div class="row"><!-- inicio row -->
+        <div class="col-md-6"><!--filtros e ordenar -->
             <div id="contentTop"> 
             <div id="filtros"><i class="fas fa-filter"></i>Filtros</div>
-            <div id="traco"></div>
-            <div id="ordenar"> Ordenar por</div>
-            <br>
-            </div>
-               </div>
-             
+            <div class="traco"></div>
+            <div id="ordenar"> Ordenar por</div><br>
         </div> <!-- fim filtros e ordenar -->
-
-            <div class="col-md-5 cadastrar"> <!-- inicio cadastrar -->
-               Cadastrar 
-                <div class="col-md-10 DataNameAtt"> <!-- inicio data name att -->
-                <div id="data">
-                    Data
-                </div>
-                <div id="nome">
-                    Nome
-                </div>
-                <div id="att">
-                    Atualização
-                    </div>
-                
-            </div> <!-- fim data name att -->
-                </div><!-- fim cadastrar -->
-
-                 <div class="col-md-10 diploma"> <!-- inicio diploma -->
-                <div id="titulo">
-                Título do diploma a ser usado como template
-                </div> 
-                <div id="escola">
-                Escola que usa esse diploma
-                </div> 
-                <div id="curso">
-                Curso que usa esse diploma
-                </div> 
-                <div id="numero">
-                Nº de usuários associados
-                </div> 
-                <div id="ball1"></div>
-                <div id="ball2"></div>
-            </div> <!-- fim diploma -->
-            
-         </div> <!-- fim container -->
-        
-     
-            </div> <!-- fim row -->
+  </div> <!-- fim row -->
+  
+     <div class="col-md-4 DataNameAtt"> <!-- inicio data name att -->
+        <div id="data">
+            Data
         </div>
+        <div id="nome">
+            Nome
+        </div>
+        <div id="att">
+            Atualização
+        </div>
+      </div> <!-- fim data name att--> 
+    </div> <!-- fim container --> 
+ </div> 
+ </div>
+</div>
+</div><!-- fim div -->
+    
+
 </template>
-
 <script>
+import Vue from 'vue';
+import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 
+Vue.use(SidebarPlugin);
+export default {
+    components: {
+        
+    },
+    data() {
+        return{
+            msg: 'Templates de diplomas cadastrados',
+            items: [
+                {
+                    label: 'Início',
+                    link: 'fa-home',
+                },
+                  {
+                    label: 'Escolas',
+                     link: 'fa-users',
+                },
+                  {
+                    label: 'Usuário',
+                    link: 'fa-user'
+                },
+                  {
+                    label: 'Diplomas',
+                    link: 'fa-graduation-cap'
+                },
+            ]
+        }
+    }
+
+}; 
 </script>
+<style>
 
-<style scoped>
-.menuVertical{
-    height: 919px;
-    width: 207px;
+.sub-title {
+    padding: 10px;
+
+}
+#default-sidebar {
+    background-color: rgb(189, 190, 192);
+    color: #ffffff;
+    font-size: 14px;
+    height: 919px ;
     padding-top: 20px;
-    background-color: #F9F9F9;
-
+    background-color: #F9F9F9 ;
+    display: inline ;
+    float: left;
+    font-family: 'Roboto', sans-serif;
+    position: static;  
+    width: 200px !important; 
 }
-ul{
-    list-style: none;
+
+
+
+nav ul  {
+    list-style-type: none;
+    padding: 0;
+    
 }
 
-ul li{
-    margin: 40px 0px;
-    width: 158px;
-    height: 20px;
-     font-family:'Manrope', sans-serif;
-
+nav i{
+    padding-right: 10px;
 }
-a{
-    padding-left: 10px;
-    color: #989898 ;
+nav ul li a   {
+    color: rgb(10, 10, 10);
+    padding: 20px;
+    display: block;
     text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px;
+    padding-left: 10px;
 }
+
+
+
 .template{
-    margin-top: 40px;
+    display: inline;
+    float: right;
     font-size: 28px;
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
     
-    
 }
-.cadastrar{
+#cadastrar{
     background-color: black;
     color: white;
-    width: 120px;
+    width: 150px;
     height: 50px;
-    text-align: center;
-    justify-content: center;
-    padding-top: 10px;
     border-radius: 15px;
-    margin-top: -150px;
-    margin-left: 750px;
-
-}
-
-#filtros{
+    padding-top: 10px;
+    margin-left: 180px;
+    margin-top: 10px;
+    text-align: center;
+   }
+#contentTop{
+     margin-top: 30px;
+ }
+ #filtros{
     float: left;
     margin-right: 20px;
     color: #989898;
@@ -130,27 +163,18 @@ a{
     color: #989898;
     font-size: 17px;
 }
-#traco{
+.traco{
     border: 0.1px solid #989898;;
     float: left;
     height: 25px;
     margin-right: 20px;
 }
-#borda{
-    margin-top: 10px;
-    border: 1px dashed rgb(180, 177, 177);
- 
-}
-#contentTop{
-    margin-top: 50px;
-}
-
 
 .DataNameAtt{
-    margin-top: 60px;
-    display: inline-block;
-    width: 400px
-   
+    display: inline;
+    justify-content: center;
+    margin-left: 190px;
+    
     
 }
 #data, #nome, #att{
@@ -163,7 +187,8 @@ a{
     color: white;
     height: 40px;
     padding-top: 10px;
-   margin-left: 2px;
+    margin-right: 2px;
+    margin-top: 20px;
 }
 #data{
     background-color: black;
@@ -172,6 +197,7 @@ a{
 }
 #nome{
     border-radius: none;
+    
 }
 #att{
     border-radius: 0 10px 10px 0;
@@ -180,48 +206,5 @@ a{
     background-color: #B28DD6;
 
 }
-.diploma{
-    font-size: 16px;
-    margin-top:100px;
-    width: 98%;
-    height: 80px;
-    display: inline-block;
-    justify-content: center;
-    text-align: center;
-    padding-top: 25px;
-    background-color: #F9F9F9;
-    border-radius: 10px;
-    box-shadow:  0 5px 6px -6px black;
-    
-    
-}
-#titulo, #escola, #curso, #numero{
-    float: left;
-    margin-right: 25px;
-    height: 20px;
-}
-#titulo{
-    font-size: 16px;
-    font-family: 'Robot', sans-serif;
-    font-weight: bold;
-}
-#escola, #curso, #numero{
-    font-size: 14px;
-    font-family: 'Robot', sans-serif;
-    color: #B28DD6;
-}
-#ball1, #ball2{
-    float:left;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-top: -10px;
-}
-#ball1{
-    background-color: #FFC700;
-}
-#ball2{
-    background-color: #DB2323;
-}
+   
 </style>
