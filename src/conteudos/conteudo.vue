@@ -18,7 +18,7 @@
                 {{ msg }}
         </div><!--fim template -->
     <div class="col-md-4 "><!--inicio cadastro -->
-        <div id="cadastrar"> Cadastrar</div>
+        <div id="cadastrar"><router-link to="/diplomacreate">Cadastrar</router-link></div>
     </div><!--fim cadastro -->
     </div><!--fim row -->
     </div> <!-- fim container -->
@@ -165,8 +165,8 @@ nav ul li a   {
 .traco{
     border: 0.1px solid #989898;;
     float: left;
-    height: 25px;
-    margin-right: 20px;
+    height: 35px;
+    margin-right: 10px;
 }
 
 .DataNameAtt{

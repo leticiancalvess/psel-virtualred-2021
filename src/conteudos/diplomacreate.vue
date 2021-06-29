@@ -28,7 +28,7 @@
   <div class="row"><!-- inicio row -->
 <div class="col-md-3" ><!--subir imagem -->
  <div id="postImage"> Subir Imagem <i class="fas fa-images iconPostImage"></i>  </div>
-  <div class="traco"></div>
+  <div class="traco2"></div>
   </div><!-- fim subir imagem -->
 
   <div class="col-md-3 shapes"><!--formas -->
@@ -163,19 +163,13 @@ nav ul li a {
     margin-top: 10px;
     text-align: center;
    }
-.traco{
-    border-right: 0.1px solid #989898;;
-    height: 35px;
-    width: 230px;
-    float: left;
-    margin-top: -40px;
-}
+
 
 .editing{
     display: inline;
     justify-content: center;
     width: 300px !important;
-    margin-left: -10px;
+    
 }
 #edit {
     float: left;
@@ -217,11 +211,11 @@ nav ul li a {
     padding-top: 7px;
 }
 .shapes, .fields{ 
-    width: 250px !important;
+    width: 280px !important;
     color:#989898;
 }
 .shapes {
-    margin-left: -50px;
+    margin-left: -40px;
 }
 .fields {
     margin-left: -10px;
@@ -244,7 +238,19 @@ nav ul li a {
     width: 40px;
     margin-left: 45px;
 }
-
+.traco{
+    border: 0.1px solid #989898;;
+    float: right;
+    height: 35px;
+    margin-right: 10px;
+}
+.traco2{
+    border: 0.1px solid #989898;;
+    float: right;
+    height: 35px;
+    margin-top: -40px;
+    margin-right: 30px;
+}
 .linha{
     margin-top: 30px;
     border-top: 1px dashed rgb(180, 177, 177);
