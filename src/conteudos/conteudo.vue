@@ -93,8 +93,6 @@ export default {
 
 .sub-title {
     padding: 10px;
-    
-
 }
 #default-sidebar {
     background-color: rgb(189, 190, 192);
