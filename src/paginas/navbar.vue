@@ -99,34 +99,6 @@ nav{
     margin-left: -30px;
 }
 
-.avatar{
-    width: 40px;
-    height: 40px;
-    background-color: #C4C4C4;
-    border-radius: 10px;
-    float: right;
-    margin-right: 10px;
-  
-}
-.superAdmin{
-    padding-left: 300px;
-    display: inline;
-    width: 500px;
-}
-#text{
-    float: right;
-  
-}
-.topText{
-    font-size: 16px;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif
-}
-.bottomText{
-    font-family: 'Rubik', sans-serif;
-    font-size: 10px;
-    color: white;
-}
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}

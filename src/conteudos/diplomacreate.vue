@@ -64,10 +64,33 @@
         Diplomas
       </div>
       </div> <!-- fim linha -->
- <canvas id= "myCanvas" ></canvas>
+ <div class="row">
+
+<div class="col-md-10">
+<canvas id= "myCanvas" ></canvas>
 </div>
+<div class="col-md-2 d-flex boxDimension">
+    <div class="col-md-6 a">
+        X 112
+        <br><br>
+        W 193
+    </div>
+    <div class="col-md-6 b">
+        Y 413
+        <br><br>
+        H 60
+    </div>
 </div>
+ </div>
+     
+ </div>
 </div>
+ 
+
+
+
+</div> 
+
 
 
 </template>
@@ -295,7 +318,7 @@ nav ul li a {
     border: 1px solid rgb(146, 142, 142);
     width: 900px !important;
     height: 662px !important;
-    background-color:  #F9F9F9;
+     background-color:  #F9F9F9;
     border-radius: 10px;
     box-shadow:  0 5px 6px -6px black;
     margin-top: 30px;
@@ -304,5 +327,18 @@ nav ul li a {
 #imageInput{
     display: none;
 }
+.boxDimension{
+    width: 150px;
+    height: 80px;
+    color: rgb(128, 128, 128);
+    padding-right: -50px;
+    border: 1px solid rgb(223, 219, 219);
+    border-radius: 3px;
+    box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 15px;
+}
+
 
 </style>
