@@ -69,18 +69,25 @@
 <div class="col-md-10">
 <canvas id= "myCanvas" ></canvas>
 </div>
-<div class="col-md-2 d-flex boxDimension">
-    <div class="col-md-6 a">
+<div class="col-md-2 d-flex boxes">
+    <div class="col-md-12 boxDimension">
+    <div class="col-md-6 XW">
         X 112
         <br><br>
         W 193
     </div>
-    <div class="col-md-6 b">
+    <div class="col-md-6 YH">
         Y 413
         <br><br>
         H 60
     </div>
+    <div class="stroke">
+        <div id="strokeWord">Stroke</div>
+    </div> 
+    </div>
+    
 </div>
+
  </div>
      
  </div>
@@ -90,8 +97,6 @@
 
 
 </div> 
-
-
 
 </template>
 
@@ -326,18 +331,43 @@ nav ul li a {
 }
 #imageInput{
     display: none;
-}
-.boxDimension{
+}.boxDimension{
     width: 150px;
     height: 80px;
+    color: rgb(128, 128, 128);
+    padding-right: -50px;
+    padding-left: 10px;
+    border: 1px solid rgb(223, 219, 219);
+    border-radius: 3px;
+    box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
+    margin-left: 10px;
+    font-size: 15px;
+}
+.boxes{
+     margin-top: 30px;
+}
+.XW{
+    float: left;
+}
+.YH{
+    float: right;
+}
+.stroke{
+    width: 180px;
+    height: 137px;
     color: rgb(128, 128, 128);
     padding-right: -50px;
     border: 1px solid rgb(223, 219, 219);
     border-radius: 3px;
     box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
-    margin-top: 30px;
-    margin-left: 20px;
+    margin-left: -40px;
     font-size: 15px;
+    margin-top: 100px;
+}
+#strokeWord{
+    font-weight: bold;
+    color: black;
+    padding-left: 10px;
 }
 
 
