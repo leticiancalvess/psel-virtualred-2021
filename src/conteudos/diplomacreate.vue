@@ -18,7 +18,7 @@
                 {{ msg }}
         </div><!--fim template -->
     <div class="col-md-4 "><!--inicio salvar -->
-        <div id="salvar"> Salvar</div>
+        <div id="save"> Salvar</div>
     </div><!--fim salvar -->
     </div><!--fim row -->
     </div> <!-- fim container -->
@@ -26,22 +26,22 @@
    
     <div class="container-fluid"><!-- inicio container -->
   <div class="row"><!-- inicio row -->
-<div class="col-md-3" ><!--subir imagem -->
- <div id="postImage"> Subir Imagem <i class="fas fa-images iconPostImage"></i>  </div>
-  <div class="traco2"></div>
+<div class="col-md-3"><!--subir imagem -->
+ <button id="select-image"><input type="file" id="imageInput" accept = "image/*"> Subir Imagem <i class="fas fa-images iconPostImage"></i> </button>
+  <div class="featurePostImage"></div>
   </div><!-- fim subir imagem -->
 
   <div class="col-md-3 shapes"><!--formas -->
         Formas:
   <i class="fas fa-star icon"></i>
-  <div class="traco"></div>
+  <div class="feature"></div>
   </div><!--fim formas -->
 
   <div class="col-md-3 fields"><!--campos -->
         Campos: 
   <i class="fas fa-text-height icon"></i>
   <i class="fas fa-images icon"></i>
-  <div class="traco"></div>
+  <div class="feature"></div>
   </div><!-- fimcampos -->
 
      <div class="col-md-3 editing"> <!-- frente e verso -->
@@ -64,8 +64,7 @@
         Diplomas
       </div>
       </div> <!-- fim linha -->
- <div id="box"> <!-- inicio box -->
- </div><!-- fim box -->
+ <canvas id= "myCanvas" ></canvas>
 </div>
 </div>
 </div>
@@ -79,7 +78,7 @@ import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 
 Vue.use(SidebarPlugin);
 export default {
-    data() {
+  data() {
         return{
             msg: 'Cadastrar novo template',
             items: [
@@ -101,9 +100,35 @@ export default {
                 },
             ]
         }
+    },
+     mounted() {
+       document.getElementById('select-image') //função para abrir a caixa de upload
+        .onclick = function () {
+            document.getElementById('imageInput').click()
+        }
+        let imgInput = document.getElementById('imageInput');
+        imgInput.addEventListener('change', function(e) {
+    if(e.target.files) {
+      let imageFile = e.target.files[0]; 
+      var reader = new FileReader();
+      reader.readAsDataURL(imageFile);
+    reader.onloadend = function (e) {
+        var myImage = new Image(); //image object
+        myImage.src = e.target.result; 
+    myImage.onload = function(ev) {
+        var myCanvas = document.getElementById("myCanvas"); // canvas object
+        var myContext = myCanvas.getContext("2d"); // armazena o contexto 
+        myCanvas.width = myImage.width; 
+        myCanvas.height = myImage.height; 
+        myContext.drawImage(myImage,0,0); //desenha a imagem
+        }
+      }
     }
+  });
+    }
+}
 
-}; 
+
 </script>
 
 <style scoped>
@@ -150,9 +175,8 @@ nav ul li a {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
-    
 }
-#salvar{
+#save{
     background-color: black;
     color: white;
     width: 100px;
@@ -162,9 +186,7 @@ nav ul li a {
     margin-left: 200px;
     margin-top: 10px;
     text-align: center;
-   }
-
-
+ }
 .editing{
     display: inline;
     justify-content: center;
@@ -193,7 +215,7 @@ nav ul li a {
 }
 #front{
     background-color: black;
-     border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 #verse{
@@ -201,15 +223,16 @@ nav ul li a {
     border-radius: 0 10px 10px 0;
 }
 
-#postImage{
+#select-image{
     background-color: black;
     color: white;
     height: 40px;
     width: 200px !important;
     border-radius: 10px;
-    padding-left: 10px;
-    padding-top: 7px;
+    border-color: black;
+  
 }
+
 .shapes, .fields{ 
     width: 280px !important;
     color:#989898;
@@ -236,19 +259,18 @@ nav ul li a {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
     width: 40px;
-    margin-left: 45px;
+    margin-left: 10px;
 }
-.traco{
+.feature{
     border: 0.1px solid #989898;;
     float: right;
     height: 35px;
     margin-right: 10px;
 }
-.traco2{
+.featurePostImage{
     border: 0.1px solid #989898;;
     float: right;
     height: 35px;
-    margin-top: -40px;
     margin-right: 30px;
 }
 .linha{
@@ -268,13 +290,19 @@ nav ul li a {
     margin-left: 10px;
     text-transform: uppercase;
 }
-#box{
-    width: 900px;
-    height: 662px;
+
+#myCanvas{
+    border: 1px solid rgb(146, 142, 142);
+    width: 900px !important;
+    height: 662px !important;
     background-color:  #F9F9F9;
     border-radius: 10px;
     box-shadow:  0 5px 6px -6px black;
     margin-top: 30px;
     margin-left: 20px;
 }
+#imageInput{
+    display: none;
+}
+
 </style>
