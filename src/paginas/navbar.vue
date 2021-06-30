@@ -84,4 +84,61 @@ nav{
     padding-left: 30px;
     color: #989898;
 }
+
+@media (min-width: 711px) and (max-width: 990px){
+    .logo{
+    width: 250px;
+}
+nav{
+    height: 121px;
+    background-color: #B28DD6 !important; 
+}
+
+    .searchFuntionality{
+    width: 300px;
+    margin-left: -30px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    background-color: #C4C4C4;
+    border-radius: 10px;
+    float: right;
+    margin-right: 10px;
+  
+}
+.superAdmin{
+    padding-left: 300px;
+    display: inline;
+    width: 500px;
+}
+#text{
+    float: right;
+  
+}
+.topText{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif
+}
+.bottomText{
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    color: white;
+}
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
 </style>
+
