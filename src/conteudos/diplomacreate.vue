@@ -64,13 +64,13 @@
         Diplomas
       </div>
       </div> <!-- fim linha -->
- <div class="row">
+ <div class="row"> <!-- inicio row -->
 
-<div class="col-md-10">
+<div class="col-md-10"> 
 <canvas id= "myCanvas" ></canvas>
 </div>
-<div class="col-md-2 d-flex boxes">
-    <div class="col-md-12 boxDimension">
+<div class="col-md-2 d-flex boxes"> <!--inicio boxes -->
+    <div class="col-md-12 boxDimension"> <!-- inicio dimension -->
     <div class="col-md-6 XW">
         X 112
         <br><br>
@@ -80,22 +80,16 @@
         Y 413
         <br><br>
         H 60
-    </div>
-    <div class="stroke">
+    </div> <!-- fim dimension -->
+    <div class="stroke"> <!-- inicio stroke -->
         <div id="strokeWord">Stroke</div>
-    </div> 
+        <div id="plus"><i class="fas fa-plus"></i></div>
+    </div>  <!-- fim stroke -->
+    </div> <!-- fim row -->
     </div>
-    
-</div>
-
- </div>
-     
+ </div> 
  </div>
 </div>
- 
-
-
-
 </div> 
 
 </template>
@@ -368,6 +362,12 @@ nav ul li a {
     font-weight: bold;
     color: black;
     padding-left: 10px;
+}
+#plus{
+    float: right;
+    font-size: 20px;
+    margin-top: -25px;
+    color: black;
 }
 
 
