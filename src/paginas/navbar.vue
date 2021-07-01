@@ -105,8 +105,6 @@
     flex-direction: end;
     float: left;
     display: inline;
-   
-  
 }
 .superAdmin{
     width: 150px;
@@ -119,14 +117,12 @@
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     float: left;
-   
 }
 #textBottom{
     font-family: 'Rubik', sans-serif;
     font-size: 10px;
     color: white;
     margin-top: -5px;
-    
 }
 }
 @media only screen and (max-width: 800px){
@@ -143,30 +139,23 @@
     flex-direction: end;
     float: left;
     display: inline;
-   
-  
 }
 .superAdmin{
     width: 150px;
     top: 0 !important;
-    right: 0;
-    left: 75%;
-    position: fixed;
-
+    position: absolute;
 }
 #textTop{
     font-size: 12px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     float: left;
-   
 }
 #textBottom{
     font-family: 'Rubik', sans-serif;
     font-size: 10px;
     color: white;
     margin-top: -5px;
-    
 }
 }
 @media only screen and (max-width: 1000px){
@@ -183,40 +172,28 @@
     flex-direction: end;
     float: left;
     display: inline;
-   
-  
+
 }
 .superAdmin{
     width: 150px;
     top: 5%;
     right: 0;
     left: 75%;
-    position: fixed;
-    
-    
-    
 }
 #textTop{
     font-size: 12px;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     float: left;
-   
 }
 #textBottom{
     font-family: 'Rubik', sans-serif;
     font-size: 10px;
     color: white;
     margin-top: -5px;
-    
 }
 } 
-@media only screen and (max-width: 1600px){
-    
-.superAdmin{
-    right: 55% !important;
-    
-}
-}
+
+
 
 </style>
