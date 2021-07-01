@@ -1,4 +1,5 @@
 <template>
+   
    <div id="app"> <!-- inicio div -->
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
@@ -11,17 +12,17 @@
         </ul>
     </nav> <!-- fim nav -->
     </ejs-sidebar>
-    <div>
+    <div> <!-- fim wrapper -->
     <div class="sub-title container-fluid"> <!-- inicio container -->
     <div class="row"> <!-- inicio row -->
         <div class="col-md-8 template"> <!--inicio template -->
-                {{ msg }}
+              {{ titulo }}
         </div><!--fim template -->
-    <div class="col-md-4 "><!--inicio cadastro -->
-        <div id="cadastrar"><router-link to="/diplomacreate">Cadastrar</router-link></div>
+        <div class="col-md-4 "><!--inicio cadastro -->
+        <div id="cadastrar" class="ms-auto"><router-link to="/diplomacreate">Cadastrar</router-link></div>
     </div><!--fim cadastro -->
-    </div><!--fim row -->
-    </div> <!-- fim container -->
+    </div> <!-- fim row -->
+     </div> <!-- fim container -->
    
 <div class="container-fluid"><!-- inicio container -->
   <div class="row"><!-- inicio row -->
@@ -33,7 +34,7 @@
         </div> <!-- fim filtros e ordenar -->
   </div> <!-- fim row -->
   
-     <div class="col-md-4 DataNameAtt"> <!-- inicio data name att -->
+     <div class="col-md-4 ms-auto"> <!-- inicio data name att -->
         <div id="data">
             Data
         </div>
@@ -44,16 +45,17 @@
             Atualização
         </div>
       </div> <!-- fim data name att--> 
-    </div> <!-- fim container --> 
- </div> 
- <titulo-diploma></titulo-diploma>
- </div>
+  </div><!-- fim container --> 
 </div>
-</div><!-- fim div -->
-    
+<titulo-diploma></titulo-diploma>
+    </div>
+</div>
+</div> 
 
 </template>
+
 <script>
+
 import Vue from 'vue';
 import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 import TituloDiploma from './TitutloDiploma.vue'
@@ -65,7 +67,7 @@ export default {
     },
     data() {
         return{
-            msg: 'Templates de diplomas cadastrados',
+            titulo: 'Templates de Diplomas Cadastrados',
             items: [
                 {
                     label: 'Início',
@@ -89,7 +91,8 @@ export default {
 
 }; 
 </script>
-<style>
+
+<style scoped>
 
 .sub-title {
     padding: 10px;
@@ -101,7 +104,6 @@ export default {
     height: 919px ;
     padding-top: 20px;
     background-color: #F9F9F9 ;
-    display: inline ;
     float: left;
     font-family: 'Roboto', sans-serif;
     position: static;  
@@ -128,7 +130,6 @@ nav ul li a   {
 }
 
 
-
 .template{
     display: inline;
     float: right;
@@ -137,6 +138,7 @@ nav ul li a   {
     font-family: 'Rubik',sans-serif;
     
 }
+
 #cadastrar{
     background-color: black;
     color: white;
@@ -144,10 +146,11 @@ nav ul li a   {
     height: 50px;
     border-radius: 15px;
     padding-top: 10px;
-    margin-left: 200px;
     margin-top: 10px;
     text-align: center;
+    
    }
+
 #contentTop{
      margin-top: 30px;
  }
@@ -171,14 +174,9 @@ nav ul li a   {
 
 .DataNameAtt{
     display: inline;
-    justify-content: center;
-    margin-left: 190px;
-    
-    
 }
 #data, #nome, #att{
     float: left;
-    padding-right: 10px;
     font-family: 'Roboto';
     font-size: 14px;
     width: 100px;
@@ -205,5 +203,69 @@ nav ul li a   {
     background-color: #B28DD6;
 
 }
-   
+
+@media (min-width: 360px ) and (max-width: 769px){
+    #default-sidebar {
+    width: 110px !important;
+    font-size: 12px;
+}
+
+nav ul li a   {
+    padding: 7px;
+    margin-left: 7px;
+    padding-left: 7px;
+}
+.template, .DataNameAtt{
+    font-size: 20px;
+    width: 250px;
+    left: 0;
+}
+#cadastrar, #contentTop {
+    float: left;
+}
+
+
+#data, #nome, #att{
+    width: 80px;
+    font-size: 11px;
+}
+}
+
+@media (min-width: 769px ) and (max-width: 1100px){
+#default-sidebar {
+    width: 110px !important;
+    font-size: 12px;
+}
+
+nav ul li a   {
+    padding: 7px;
+    margin-left: 7px;
+    padding-left: 7px;
+}
+.template, .DataNameAtt{
+    font-size: 20px;
+    width: 250px;
+    left: 0;
+}
+#cadastrar, #contentTop {
+    float: left;
+}
+#data{
+    margin-left: -30px;
+}
+
+#data, #nome, #att{
+    width: 60px;
+    font-size: 11px;
+}
+}
+
+@media (min-width: 1100px ){
+
+#data, #nome, #att{
+    width: 90px;
+    font-size: 15px;
+}
+}
+
 </style>
