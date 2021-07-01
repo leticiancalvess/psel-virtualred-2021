@@ -18,7 +18,7 @@
                 {{ msg }}
         </div><!--fim template -->
     <div class="col-md-4 "><!--inicio salvar -->
-        <div id="save"> Salvar</div>
+        <div id="salvar"> Salvar</div>
     </div><!--fim salvar -->
     </div><!--fim row -->
     </div> <!-- fim container -->
@@ -27,21 +27,22 @@
     <div class="container-fluid"><!-- inicio container -->
   <div class="row"><!-- inicio row -->
 <div class="col-md-3"><!--subir imagem -->
- <button id="select-image"><input type="file" id="imageInput" accept = "image/*"> Subir Imagem <i class="fas fa-images iconPostImage"></i> </button>
-  <div class="featurePostImage"></div>
+ 
+<button  v-on:click="isHidden = !isHidden" id="select-image"><input type="file" id="imageInput" accept = "image/*"><div id="postImage">Subir Imagem<i class="fas fa-images iconPostImage"></i> </div></button>
+  <div class="traco2"></div>
   </div><!-- fim subir imagem -->
 
   <div class="col-md-3 shapes"><!--formas -->
         Formas:
-  <i class="fas fa-star icon"></i>
-  <div class="feature"></div>
+  <i v-on:click="isHiddenFormas = !isHiddenFormas" class="fas fa-star icon"></i>
+  <div class="traco"></div>
   </div><!--fim formas -->
 
   <div class="col-md-3 fields"><!--campos -->
         Campos: 
   <i class="fas fa-text-height icon"></i>
   <i class="fas fa-images icon"></i>
-  <div class="feature"></div>
+  <div class="traco"></div>
   </div><!-- fimcampos -->
 
      <div class="col-md-3 editing"> <!-- frente e verso -->
@@ -64,13 +65,13 @@
         Diplomas
       </div>
       </div> <!-- fim linha -->
- <div class="row"> <!-- inicio row -->
+<div class="row">
 
-<div class="col-md-10"> 
+<div class="col-md-10">
 <canvas id= "myCanvas" ></canvas>
 </div>
-<div class="col-md-2 d-flex boxes"> <!--inicio boxes -->
-    <div class="col-md-12 boxDimension"> <!-- inicio dimension -->
+<div  class="col-md-2 d-flex boxes">
+    <div  v-if="isHidden" class="col-md-12 boxDimension">
     <div class="col-md-6 XW">
         X 112
         <br><br>
@@ -80,17 +81,28 @@
         Y 413
         <br><br>
         H 60
-    </div> <!-- fim dimension -->
-    <div class="stroke"> <!-- inicio stroke -->
+    </div>
+    </div>
+    <div class="stroke">
+        
         <div id="strokeWord">Stroke</div>
         <div id="plus"><i class="fas fa-plus"></i></div>
-    </div>  <!-- fim stroke -->
-    </div> <!-- fim row -->
-    </div>
- </div> 
+        
+    </div> 
+
+    
+</div>
+
+ </div>
+     
  </div>
 </div>
+ 
+
+
+
 </div> 
+
 
 </template>
 
@@ -100,9 +112,11 @@ import { SidebarPlugin } from '@syncfusion/ej2-vue-navigations';
 
 Vue.use(SidebarPlugin);
 export default {
-  data() {
+  
+    data() {
         return{
             msg: 'Cadastrar novo template',
+            isHidden: false,
             items: [
                 {
                     label: 'Início',
@@ -120,14 +134,11 @@ export default {
                     label: 'Diplomas',
                     link: 'fa-graduation-cap'
                 },
+                
             ]
         }
     },
      mounted() {
-       document.getElementById('select-image') //função para abrir a caixa de upload
-        .onclick = function () {
-            document.getElementById('imageInput').click()
-        }
         let imgInput = document.getElementById('imageInput');
         imgInput.addEventListener('change', function(e) {
     if(e.target.files) {
@@ -197,8 +208,9 @@ nav ul li a {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
+    
 }
-#save{
+#salvar{
     background-color: black;
     color: white;
     width: 100px;
@@ -208,7 +220,9 @@ nav ul li a {
     margin-left: 200px;
     margin-top: 10px;
     text-align: center;
- }
+   }
+
+
 .editing{
     display: inline;
     justify-content: center;
@@ -237,7 +251,7 @@ nav ul li a {
 }
 #front{
     background-color: black;
-    border-radius: 10px 0 0 10px;
+     border-radius: 10px 0 0 10px;
 }
 
 #verse{
@@ -251,13 +265,16 @@ nav ul li a {
     height: 40px;
     width: 200px !important;
     border-radius: 10px;
-    border-color: black;
+    
   
 }
-
+#postImage{
+     margin-top: -30px;
+}
 .shapes, .fields{ 
     width: 280px !important;
     color:#989898;
+   
 }
 .shapes {
     margin-left: -40px;
@@ -280,21 +297,23 @@ nav ul li a {
 .iconPostImage{
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    width: 40px;
+    width: 20px;
     margin-left: 10px;
+    
 }
-.feature{
+.traco{
     border: 0.1px solid #989898;;
     float: right;
     height: 35px;
     margin-right: 10px;
 }
-.featurePostImage{
+.traco2{
     border: 0.1px solid #989898;;
     float: right;
     height: 35px;
     margin-right: 30px;
 }
+
 .linha{
     margin-top: 30px;
     border-top: 1px dashed rgb(180, 177, 177);
@@ -312,7 +331,6 @@ nav ul li a {
     margin-left: 10px;
     text-transform: uppercase;
 }
-
 #myCanvas{
     border: 1px solid rgb(146, 142, 142);
     width: 900px !important;
@@ -324,8 +342,11 @@ nav ul li a {
     margin-left: 20px;
 }
 #imageInput{
-    display: none;
-}.boxDimension{
+    opacity: 0;
+    width: 180px;
+}
+
+.boxDimension{
     width: 150px;
     height: 80px;
     color: rgb(128, 128, 128);
@@ -334,11 +355,12 @@ nav ul li a {
     border: 1px solid rgb(223, 219, 219);
     border-radius: 3px;
     box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
-    margin-left: 10px;
     font-size: 15px;
+    margin-bottom: 20px;
 }
 .boxes{
      margin-top: 30px;
+     flex-direction: column;;
 }
 .XW{
     float: left;
@@ -354,21 +376,42 @@ nav ul li a {
     border: 1px solid rgb(223, 219, 219);
     border-radius: 3px;
     box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
-    margin-left: -40px;
     font-size: 15px;
-    margin-top: 100px;
+    margin-left: -30px;
 }
 #strokeWord{
     font-weight: bold;
     color: black;
     padding-left: 10px;
+    float: left;
 }
 #plus{
     float: right;
     font-size: 20px;
-    margin-top: -25px;
+    margin-top: -5px;
     color: black;
 }
 
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 400px) {
+#default-sidebar {
+    font-size: 12px;
+    width: 150px !important; 
+}
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
 
 </style>
