@@ -83,11 +83,14 @@
         H 60
     </div>
     </div>
-    <div class="stroke">
+    <div v-if="isHiddenFormas" class="col-md-12 stroke" >
+        <div class="col-md-12">
+        <div  class="col-md-10" id="strokeWord">Stroke</div>
         
-        <div id="strokeWord">Stroke</div>
-        <div id="plus"><i class="fas fa-plus"></i></div>
-        
+        <div class="col-md-2" id="plus"><i class="fas fa-plus"></i></div>
+        </div>
+        <div class="col-md-8 oi">
+            </div>
     </div> 
 
     
@@ -117,6 +120,7 @@ export default {
         return{
             msg: 'Cadastrar novo template',
             isHidden: false,
+            isHiddenFormas: false,
             items: [
                 {
                     label: 'Início',
@@ -378,12 +382,14 @@ nav ul li a {
     box-shadow:  0 5px 6px -6px rgb(97, 96, 96);
     font-size: 15px;
     margin-left: -30px;
+    
 }
 #strokeWord{
     font-weight: bold;
     color: black;
     padding-left: 10px;
     float: left;
+    
 }
 #plus{
     float: right;
