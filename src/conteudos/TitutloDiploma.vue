@@ -10,9 +10,10 @@
         <div v-for="(texto, index) in textos" :key="index" id="escola">
         {{ texto.frase }}
         </div> 
-
+        
         <div id="ball1"></div>
         <div id="ball2"></div>
+        
     </div> <!-- fim diploma -->
     </div>
 
@@ -58,8 +59,7 @@ export default {
 }
 
 .diploma{
-    font-size: 16px;
-    margin-top:70px;
+    margin-top:50px;
     margin-left: 10px;
     height: 80px;
     display: inline-block;
@@ -99,5 +99,46 @@ export default {
 #ball2{
     background-color: #DB2323;
 }
+
+
+
+
+@media only screen and (min-width: 500px){
+.linha, .underTheLine, .diploma{
+    float: left;
+}
+.diploma{
+   height: 220px !important;
+   clear: both;
+   padding-top: 5px;
+
+}
+#titulo {
+    font-size: 14px;
+}
+
+#titulo, #escola{
+    margin-top: 20px;
+}
+#ball1, #ball2{
+    margin-top: 10px;
+}
+
+}
+@media (min-width: 769px ) and (max-width: 1306px){
+    
+.diploma{
+   height: 140px !important;
+   flex-direction: column !important;
+}
+
+}
+
+@media (min-width: 1306px ){
+    .diploma{
+        height: 90px !important;
+    }
+}
+
 
 </style>
