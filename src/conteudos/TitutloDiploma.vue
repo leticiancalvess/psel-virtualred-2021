@@ -101,7 +101,7 @@ export default {
 }
 
 
-
+/* --------------- media queries  ---------------*/
 
 @media only screen and (min-width: 500px){
 .linha, .underTheLine, .diploma{

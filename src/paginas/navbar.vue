@@ -91,6 +91,8 @@
     
 }
 
+/* --------------- media queries  ---------------*/
+
 @media only screen and (max-width: 499px){
 .logo{
     width: 150px;

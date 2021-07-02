@@ -22,23 +22,31 @@
     </div><!--fim salvar -->
     </div><!--fim row -->
     </div> <!-- fim container -->
-     <section class="flex">
-      <div>
-    
-<button  v-on:click="isHidden = !isHidden" id="select-image"><input type="file" id="imageInput" accept = "image/*"><div id="postImage">Subir Imagem<i class="fas fa-images iconPostImage"></i> </div></button>
-        
-      </div>
-      <div>
+
+
+     <section class="flex"> <!-- inicio flex -->
+      <div> <!-- inicio subir imagem -->
+        <button  v-on:click="isHidden = !isHidden" id="select-image"><input type="file" id="imageInput" accept = "image/*"><div id="postImage">Subir Imagem<i class="fas fa-images iconPostImage"></i> </div></button>
+      <div class="traco"></div>
+      </div> <!-- fim subir imagem -->
+
+
+      <div> <!-- inicio formas -->
         Formas:
         <i v-on:click="isHiddenFormas = !isHiddenFormas" class="fas fa-star icon"></i>
         <div class="traco"></div>
-      </div>
-      <div>
+      </div> <!-- fim formas -->
+
+
+      <div> <!-- inicio campos -->
         Campos: 
         <i class="fas fa-text-height icon"></i>
         <i class="fas fa-images icon"></i>
-      </div>
-       <div >
+        <div class="traco"></div>
+      </div> <!-- fim campos -->
+
+
+       <div><!-- inicio editando -->
            <div id="edit">
                Editando:
            </div>
@@ -49,23 +57,25 @@
      <div id="verse">
          Verso
         </div>
-      </div>
+      </div> <!-- fim editando -->
     
-    </section>
+    </section> <!-- fim flex -->
+
+
      <div class="col-md-10 linha">
       <div class="underTheLine">
           Diploma
           </div>
           </div>
    
-         <section class="grid2">
-      <div class="video">
+         <section class="grid"> <!-- inicio canvas --> 
+      
           <canvas id= "myCanvas" ></canvas>
         
-      </div>
-      <div class="sidebar">
-        <div>
-            <div v-if="isHidden" class="col-md-12 boxDimension">
+      
+      <div class="sidebar"> <!-- inicio sidebar -->
+        
+            <div v-if="isHidden" class="col-md-12 boxDimension"> <!-- inicio primeira box -->
                 <div class="col-md-6 XW">
                     X 112
                     <br><br>
@@ -76,60 +86,69 @@
                     <br><br>
                     H 60
                 </div>
-                </div>
-                 <div  v-if="isHiddenFormas" class="col-md-12 stroke" >
-        <div class="col-md-12">
-        <div  class="col-md-10" id="strokeWord">Stroke</div>
+                </div> <!-- fim primeira box -->
+        <div  v-if="isHiddenFormas" class="col-md-12 stroke" > <!-- inicio segunda box -->
+        <div class="col-md-12"> <!-- primeira linha -->
+        <div  class="col-md-10" id="strokeWord">Stroke</div> 
         
         <div class="col-md-2" id="plus"><i class="fas fa-plus"></i></div>
         
-           <div class="container" >
+    <div class="container" > <!-- segunda linha -->
 	<div class="item1" >
-        <div id="caixaColor">
-            <div id="zero"> 000000</div>
-           
-        </div>
-    </div>
+    <div id="caixaColor">
+    <div id="zero"> 000000</div>
+    </div> 
+    </div> 
     
-	<div class="item" >
-        <i class="far fa-eye eye"></i><i class="fas fa-minus minus"></i>
-    </div>
-    </div>
-    <div class="container2" >
+	<div class="item">
+    <i class="far fa-eye eye"></i><i class="fas fa-minus minus"></i>
+    </div> <!-- fim item1 -->
+    </div> 
+
+
+    <div class="container2"> <!-- inicio terceira linha -->
         <div id="bars">
              <i class="fas fa-bars"></i>
              3
         </div>
           <div id="center">
              Center <i class="fas fa-chevron-down"></i>
-            
         </div>
-    
-        </div>
-        <div class="container" >
-	    <div class="item3" >
-            
-                <i class="fas fa-minus  down2" ></i><i class="fas fa-chevron-down down"></i>
-                </div>
-	    <div class="item3" ><i class="fas fa-minus  down2"></i><i class="fas fa-chevron-down down"></i></div>
-	    <div class="item4" ><i class="fas fa-ellipsis-h ellipsis"></i></div>
-        </div>
-	
-	
+        </div> <!-- fim terceira linha -->
+
+
+        <div class="container">  <!-- inicio quarta linha -->
+	    <div class="item3"> 
+            <div class="line">
+                 <i class="fas fa-minus down2" ></i>
+            <div class="arrow">
+                <i class="fas fa-chevron-down down"></i>
+            </div>
+           </div>
 
         </div>
+	     <div class="item3">
+            <div class="line">
+                 <i class="fas fa-minus down2" ></i>
+            <div class="arrow">
+                <i class="fas fa-chevron-down down"></i>
+            </div>
+           </div>
         </div>
-        </div>
-        </div> 
 
-    </section>
-    
-  </div>
+	    <div class="item4">
+            <i class="fas fa-ellipsis-h ellipsis"></i>
+            </div>
+            </div> <!-- fim terceira linha -->
+        </div>
+    </div>
 </div>
-    </div>
-    </div>
-
+</section>
     
+</div>
+</div>
+</div>
+</div>
  </template>
      
 <script>
@@ -254,7 +273,6 @@ nav ul li a {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
-    
 }
 #salvar{
     background-color: black;
@@ -266,12 +284,9 @@ nav ul li a {
     margin-top: 10px;
     text-align: center;
     justify-content: center !important;
-   }
+}
    
-.oi{
-   
-    float: left;
-} 
+
 .fields, .shapes, .editing{
     float: left;
     border: 1px solid blue;
@@ -290,7 +305,7 @@ nav ul li a {
 #postImage{
      margin-top: -30px;
 }
-.traco2{
+.traco{
     border: 0.1px solid #989898;
     float: right;
     height: 35px;
@@ -330,12 +345,6 @@ nav ul li a {
     background-color: #B28DD6;
     border-radius: 0 10px 10px 0;
 }
-.g{
-    border: 1px solid green;
-}
-.b{
-    border: 1px solid purple;
-}
 
 #edit {
     float: left;
@@ -362,31 +371,26 @@ nav ul li a {
     margin-left: 10px;
     
 }
-/* CSS Grid 2 */
-
-.grid2 {
+.grid {
     display: grid;
     grid-template-columns: 1fr 200px;
     grid-gap: 20px;
     max-width: 1000px;
     padding: 10px;
   }
-  #myCanvas{
-     border: 1px solid rgb(146, 142, 142);
+#myCanvas{
+    border: 1px solid rgb(146, 142, 142);
     width: 900px !important;
     height: 662px !important;
-     background-color:  #F9F9F9;
+    background-color:  #F9F9F9;
     border-radius: 10px;
     box-shadow:  0 5px 6px -6px black;
     margin-top: 30px;
     margin-left: 20px;
-
-  }
-
-  .sidebar > div {
+}
+.sidebar > div {
     margin-bottom: 10px;
-    
-  }
+}
   
 .boxDimension{
     width: 150px;
@@ -472,7 +476,7 @@ nav ul li a {
 
 .container2{
     display: flex;
-   flex-wrap: nowrap;  
+    flex-wrap: nowrap;  
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -485,16 +489,13 @@ nav ul li a {
     font-size: 13px;
 
 }
-.down{
-    font-size: 10x;
-    text-align: center;
-}
+
 .down2{
     font-size: 25px;
-     color: black;
+    color: black;
 }
 .item3{
-   width: 40%;  
+   width: 40%; 
   
 }
 .item4{
@@ -504,20 +505,31 @@ nav ul li a {
 .ellipsis{
     color: black;
 }
+.line{
+     display: flex;
+   
+}
+.arrow{
+    font-size: 13px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+/* --------------- media queries  ---------------*/
 
   @media (max-width: 500px) {
-    .grid2 {
+.grid {
       grid-template-columns: 2fr;
     }
 
-     #myCanvas{
+#myCanvas{
      width: 150px !important;
      height: 150px !important;
      margin-left: 5px;
  }   
   }
  @media (min-width: 500px ) and (max-width: 600px) {
-      .grid2 {
+.grid {
       grid-template-columns: 2fr;
     }
  #myCanvas{
@@ -526,7 +538,7 @@ nav ul li a {
   }
  }
    @media (min-width: 600px ) and (max-width: 750px) {
-       .grid2 {
+.grid {
       grid-template-columns: 2fr;
     }
  #myCanvas{
@@ -564,5 +576,10 @@ nav ul li a {
     width: 55px;
 
 }
+ }
+ @media (max-width: 1121px){
+     .traco{
+        display: none !important;
+     }
  }
 </style>
