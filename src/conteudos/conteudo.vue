@@ -13,17 +13,20 @@
     </nav> <!-- fim nav -->
     </ejs-sidebar>
     <div> <!-- fim wrapper -->
+
+
     <div class="sub-title container-fluid"> <!-- inicio container -->
     <div class="row"> <!-- inicio row -->
-        <div class="col-md-8 template"> <!--inicio template -->
+        <div class="col-md-10 template"> <!--inicio template -->
               {{ titulo }}
         </div><!--fim template -->
-        <div class="col-md-4 "><!--inicio cadastro -->
-        <div id="cadastrar" class="ms-auto"><router-link to="/diplomacreate">Cadastrar</router-link></div>
+        <div class="col-md-2 d-flex justify-content-start "><!--inicio cadastro -->
+        <div id="cadastrar" ><router-link to="/diplomacreate">Cadastrar</router-link></div>
     </div><!--fim cadastro -->
     </div> <!-- fim row -->
      </div> <!-- fim container -->
-   
+
+
 <div class="container-fluid"><!-- inicio container -->
   <div class="row"><!-- inicio row -->
         <div class="col-md-6"><!--filtros e ordenar -->
@@ -34,6 +37,7 @@
         </div> <!-- fim filtros e ordenar -->
   </div> <!-- fim row -->
   
+
      <div class="col-md-4 ms-auto"> <!-- inicio data name att -->
         <div id="data">
             Data
@@ -47,8 +51,12 @@
       </div> <!-- fim data name att--> 
   </div><!-- fim container --> 
 </div>
+
+
 <titulo-diploma></titulo-diploma>
-    </div>
+
+
+</div>
 </div>
 </div> 
 
@@ -136,7 +144,6 @@ nav ul li a   {
     font-size: 28px;
     font-weight: bold;
     font-family: 'Rubik',sans-serif;
-    
 }
 
 #cadastrar{
@@ -148,22 +155,21 @@ nav ul li a   {
     padding-top: 10px;
     margin-top: 10px;
     text-align: center;
-    
    }
 
 #contentTop{
      margin-top: 30px;
  }
- #filtros{
-    float: left;
+ #filtros {
     margin-right: 20px;
-    color: #989898;
-    font-size: 17px;
+   
 }
-#ordenar{
+#filtros, #ordenar{
     float:left;
     color: #989898;
     font-size: 17px;
+    font-family: 'Manrope', sans-serif;
+     font-weight: bold;
 }
 .traco{
     border: 0.1px solid #989898;;
@@ -177,7 +183,7 @@ nav ul li a   {
 }
 #data, #nome, #att{
     float: left;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     width: 100px;
     text-align: center;
@@ -194,78 +200,40 @@ nav ul li a   {
 }
 #nome{
     border-radius: none;
-    
 }
 #att{
     border-radius: 0 10px 10px 0;
 }
 #nome, #att{
     background-color: #B28DD6;
-
 }
 
-@media (min-width: 360px ) and (max-width: 769px){
-    #default-sidebar {
-    width: 110px !important;
-    font-size: 12px;
-}
+/* --------------- media queries  ---------------*/
 
-nav ul li a   {
-    padding: 7px;
-    margin-left: 7px;
-    padding-left: 7px;
-}
-.template, .DataNameAtt{
-    font-size: 20px;
-    width: 250px;
-    left: 0;
-}
-#cadastrar, #contentTop {
-    float: left;
-}
-
-
+@media (max-width: 545px) {
 #data, #nome, #att{
-    width: 80px;
-    font-size: 11px;
+    width: 75px;
 }
 }
 
-@media (min-width: 769px ) and (max-width: 1100px){
-#default-sidebar {
-    width: 110px !important;
-    font-size: 12px;
-}
-
-nav ul li a   {
-    padding: 7px;
-    margin-left: 7px;
-    padding-left: 7px;
-}
-.template, .DataNameAtt{
-    font-size: 20px;
-    width: 250px;
-    left: 0;
-}
-#cadastrar, #contentTop {
-    float: left;
+@media (min-width: 768px ) and (max-width: 966px) {
+ #data, #nome, #att{
+       width: 70px;
+       font-size: 13px;
 }
 #data{
-    margin-left: -30px;
+       margin-left: -60px;
 }
 
-#data, #nome, #att{
-    width: 60px;
-    font-size: 11px;
+}
+@media (min-width: 966px ) and (max-width: 1200px) {
+   #data, #nome, #att{
+       width: 80px;
+}
+   #data{
+       margin-left: -20px;
 }
 }
 
-@media (min-width: 1100px ){
-
-#data, #nome, #att{
-    width: 90px;
-    font-size: 15px;
-}
-}
 
 </style>

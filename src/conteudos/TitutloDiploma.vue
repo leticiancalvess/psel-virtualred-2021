@@ -77,12 +77,12 @@ export default {
 }
 #titulo{
     font-size: 16px;
-    font-family: 'Robot', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 #escola{
     font-size: 14px;
-    font-family: 'Robot', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #B28DD6;
 }
 #ball1, #ball2{
@@ -121,6 +121,7 @@ export default {
     margin-top: 20px;
 }
 #ball1, #ball2{
+    justify-content: row;
     margin-top: 10px;
 }
 
@@ -139,6 +140,7 @@ export default {
         height: 90px !important;
     }
 }
+
 
 
 </style>
